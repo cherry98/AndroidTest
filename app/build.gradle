@@ -41,7 +41,7 @@ android {
             applicationId 'com.rose.test.na'
             dimension 'demo'
         }
-        resr_of_the_world {
+        rest_of_the_world {
             applicationId 'com.rose.test'
             dimension 'demo'
         }
@@ -66,7 +66,7 @@ android {
         release {
             productFlavors.china.signingConfig signingConfigs.release
             productFlavors.north_america.signingConfig signingConfigs.release
-            productFlavors.resr_of_the_world.signingConfig signingConfigs.release
+            productFlavors.rest_of_the_world.signingConfig signingConfigs.release
             minifyEnabled true
             testCoverageEnabled false
         }
