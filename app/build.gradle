@@ -31,6 +31,21 @@ android {
             storePassword '123456'
         }
     }
+    flavorDimensions 'demo'
+    productFlavors {
+        china {
+            applicationId 'com.rose.test.cn'
+            dimension 'demo'
+        }
+        north_america {
+            applicationId 'com.rose.test.na'
+            dimension 'demo'
+        }
+        resr_of_the_world {
+            applicationId 'com.rose.test'
+            dimension 'demo'
+        }
+    }
     buildTypes {//各版本环境配置
         debug {
             signingConfigs.debug
@@ -45,28 +60,15 @@ android {
         }
         stage {
             initWith(debug)
-            applicationIdSuffix '.stg'
+            applicationIdSuffix '.stg'//applicationIdSuffix附件后缀
             testCoverageEnabled false
         }
         release {
+            productFlavors.china.signingConfig signingConfigs.release
+            productFlavors.north_america.signingConfig signingConfigs.release
+            productFlavors.resr_of_the_world.signingConfig signingConfigs.release
             minifyEnabled true
             testCoverageEnabled false
-        }
-    }
-
-    flavorDimensions 'demo'
-    productFlavors {
-        china {
-            applicationId 'com.rose.test.cn'
-            dimension 'demo'
-        }
-        north_america {
-            applicationId 'com.rose.test.na'
-            dimension 'demo'
-        }
-        resr_of_the_world {
-            applicationId 'com.rose.test'
-            dimension 'demo'
         }
     }
 }
