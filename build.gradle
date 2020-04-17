@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {//这里是gradle脚本执行所需依赖 分别对应的是maven库和插件
+    repositories {
+        google()//可引用Google上的开源项目
+        jcenter()//一个类似于GitHub的代码托管仓库，可以引用jenter()上的开源项目
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'//此处是android的插件gradle 项目构建工具
+        
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {//这里是项目本身所需要的的依赖，比如项目所需要的的maven库
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+//运行gradle clean 执行此处定义的task
+//该任务继承自Delete，删除根目录中的build目录。
+// 相当于执行Delete.delete(rootProject.buildDir)。
+// gradle使用groovy语言，调用method时可以不用加（）
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
