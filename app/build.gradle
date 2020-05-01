@@ -6,6 +6,7 @@ apply plugin: 'com.android.application'
 //文件中第一行使用apply plugin表示应用了一个插件，该插件一般有两种值可选：
 //'com.android.application'，表示该模块为应用程序模块，可以直接运行，打包得到的是.apk文件
 //'com.android.library'，表示该模块为库模块，只能作为代码库依附于别的应用程序模块来运行，打包得到的是.aar文件
+apply plugin: 'android-aspectjx'
 
 android {
     compileSdkVersion 29//设置编译时用的Android版本
@@ -71,6 +72,11 @@ android {
             testCoverageEnabled false
         }
     }
+
+    compileOptions {
+        sourceCompatibility = "1.8"
+        targetCompatibility = "1.8"
+    }
 }
 
 dependencies {
@@ -83,4 +89,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
+
+    implementation project(':home')
+    implementation project(':my')
+    implementation project(':permission')
+
 }

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rose.test">
+    <!--电话-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--摄像头-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--读日历-->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <!--传感器-->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <!--定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -9,7 +21,11 @@
         android:roundIcon="@mipmap/ic_app_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".constraint.ConstraintActivity"></activity>
+        <activity android:name=".permissions.PermissionActivity"></activity>
+        <activity android:name=".layoutnest.LayoutNestActivity" />
+        <activity android:name=".component.ComponentActivity" />
+        <activity android:name=".animate.AnimateActivity" />
+        <activity android:name=".constraint.ConstraintActivity" />
         <activity android:name=".recyclerview.CoordinatorActivity" />
         <activity android:name=".recyclerview.RecyclerViewActivity" />
         <activity android:name=".MainActivity">
@@ -19,6 +35,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".permissions.MyService" />
     </application>
 
 </manifest>

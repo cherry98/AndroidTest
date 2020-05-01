@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@anim/jiasu_anim">
+    <!--旋转动画标签
+    android:fromDegrees 开始旋转的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数
+    android:toDegrees 结束时旋转到的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数
+    android:pivotX 缩放起点X轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p
+    android:pivotX 缩放起点Y轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p-->
+    <rotate
+        android:duration="4000"
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="360" />
+</set>

@@ -8,9 +8,8 @@ buildscript {//这里是gradle脚本执行所需依赖 分别对应的是maven�
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'//此处是android的插件gradle 项目构建工具
-        
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+
+        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.5'//Aspectjx使用AOP思想实现动态申请权限
     }
 }
 
